@@ -1,5 +1,8 @@
 class StringCalculator {
   public int add(String numbers) {
+    if (!numbers.isBlank()) {
+      return Integer.valueOf(numbers);
+    }
     if (numbers.equals("3")) {
       return 3;
     }

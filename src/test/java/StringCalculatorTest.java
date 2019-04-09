@@ -15,5 +15,6 @@ public class StringCalculatorTest {
   public void oneNumber() {
     assertThat(calculator.add("3"), is(3));
     assertThat(calculator.add("5"), is(5));
+    assertThat(calculator.add("7"), is(7));
   }
 }
