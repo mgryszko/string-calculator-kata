@@ -1,14 +1,9 @@
 class StringCalculator {
   public int add(String numbers) {
-    if (!numbers.isBlank()) {
-      return Integer.valueOf(numbers);
+    if (numbers.isBlank())
+    {
+      return 0;
     }
-    if (numbers.equals("3")) {
-      return 3;
-    }
-    if (numbers.equals("5")) {
-      return 5;
-    }
-    return 0;
+    return Integer.valueOf(numbers);
   }
 }
