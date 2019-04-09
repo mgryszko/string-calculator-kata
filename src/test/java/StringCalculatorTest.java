@@ -31,4 +31,10 @@ public class StringCalculatorTest {
     assertThat(calculator.add("2,3,4"), is(9));
     assertThat(calculator.add("1,2,3,4"), is(10));
   }
+
+  @Test
+  public void newLinesAsSeparators() {
+    assertThat(calculator.add("1\n2,3,4"), is(10));
+    assertThat(calculator.add("1\n2\n3\n4"), is(10));
+  }
 }
