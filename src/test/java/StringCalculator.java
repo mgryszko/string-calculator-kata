@@ -5,8 +5,9 @@ class StringCalculator {
     }
 
     if (numbers.contains(",")) {
-      int addend1 = Integer.valueOf(numbers.split(",")[0]);
-      int addend2 = Integer.valueOf(numbers.split(",")[1]);
+      String[] addends = numbers.split(",");
+      int addend1 = Integer.valueOf(addends[0]);
+      int addend2 = Integer.valueOf(addends[1]);
       return addend1 + addend2;
     }
 
