@@ -8,8 +8,7 @@ class StringCalculator {
       String[] addends = numbers.split(",");
       int sum = 0;
       for (String number : addends) {
-        int addend = Integer.valueOf(number);
-        sum += addend;
+        sum += Integer.valueOf(number);
       }
       return sum;
     }
