@@ -12,6 +12,10 @@ class StringCalculator {
       return 0;
     }
 
-    return Integer.valueOf(number) ;
+    Integer numberAsInt = Integer.valueOf(number);
+    if (numberAsInt < 0) {
+      throw new IllegalArgumentException();
+    }
+    return numberAsInt;
   }
 }

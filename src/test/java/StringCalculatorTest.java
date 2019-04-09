@@ -37,4 +37,9 @@ public class StringCalculatorTest {
     assertThat(calculator.add("1\n2,3,4"), is(10));
     assertThat(calculator.add("1\n2\n3\n4"), is(10));
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void negativeNumbers() {
+    calculator.add("-1,2,3,4");
+  }
 }
