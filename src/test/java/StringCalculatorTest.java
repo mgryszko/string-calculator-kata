@@ -22,5 +22,6 @@ public class StringCalculatorTest {
   public void twoNumbers() {
     assertThat(calculator.add("1,2"), is(3));
     assertThat(calculator.add("2,4"), is(6));
+    assertThat(calculator.add("15,31"), is(46));
   }
 }
