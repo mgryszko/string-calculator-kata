@@ -4,15 +4,11 @@ class StringCalculator {
       return 0;
     }
 
-    if (numbers.contains(",")) {
-      String[] addends = numbers.split(",");
-      int sum = 0;
-      for (String number : addends) {
-        sum += Integer.valueOf(number);
-      }
-      return sum;
+    String[] addends = numbers.split(",");
+    int sum = 0;
+    for (String number : addends) {
+      sum += Integer.valueOf(number);
     }
-
-    return Integer.valueOf(numbers);
+    return sum;
   }
 }
