@@ -7,15 +7,15 @@ class StringCalculator {
     return sum;
   }
 
-  private Integer valueOf(String number) {
-    if (number.isEmpty()) {
+  private Integer valueOf(String str) {
+    if (str.isEmpty()) {
       return 0;
     }
 
-    Integer numberAsInt = Integer.valueOf(number);
-    if (numberAsInt < 0) {
+    Integer number = Integer.valueOf(str);
+    if (number < 0) {
       throw new IllegalArgumentException();
     }
-    return numberAsInt;
+    return number;
   }
 }
