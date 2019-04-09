@@ -1,8 +1,7 @@
 class StringCalculator {
   public int add(String numbers) {
-    String[] addends = numbers.split(",");
     int sum = 0;
-    for (String number : addends) {
+    for (String number : numbers.split(",")) {
       sum += valueOf(number);
     }
     return sum;
