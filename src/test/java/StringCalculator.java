@@ -4,7 +4,6 @@ class StringCalculator {
       return 0;
     }
 
-
     if (numbers.contains(",")) {
       String[] addends = numbers.split(",");
       int addend1 = Integer.valueOf(addends[0]);
@@ -18,6 +17,16 @@ class StringCalculator {
         addend4 = Integer.valueOf(addends[3]);
       }
       return addend1 + addend2 + addend3 + addend4;
+    }
+
+    if (numbers.contains(",")) {
+      String[] addends = numbers.split(",");
+      int sum = 0;
+      for (String number : addends) {
+        int addend = Integer.valueOf(number);
+        sum += addend;
+      }
+      return sum;
     }
 
     return Integer.valueOf(numbers);
