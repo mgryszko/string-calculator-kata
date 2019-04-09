@@ -24,4 +24,11 @@ public class StringCalculatorTest {
     assertThat(calculator.add("2,4"), is(6));
     assertThat(calculator.add("15,31"), is(46));
   }
+
+  @Test
+  public void manyNumbers() {
+    assertThat(calculator.add("1,2,3"), is(6));
+    assertThat(calculator.add("2,3,4"), is(9));
+    assertThat(calculator.add("1,2,3,4"), is(10));
+  }
 }
