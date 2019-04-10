@@ -1,12 +1,16 @@
 class StringCalculator {
   public int add(String numbers) {
-    String separator = "[,\n]";
+    String separator;
+    String numbersLine;
     if (numbers.startsWith("//")) {
       String[] separatorAndNumbers = numbers.split("\n");
       separator = separatorAndNumbers[0].substring(2, 3);
-      numbers = separatorAndNumbers[1];
+      numbersLine = separatorAndNumbers[1];
+    } else {
+      separator = "[,\n]";
+      numbersLine = numbers;
     }
-    return sum(numbers.split(separator));
+    return sum(numbersLine.split(separator));
   }
 
   private int sum(String[] numbers) {
