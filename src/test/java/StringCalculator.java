@@ -1,7 +1,7 @@
 class StringCalculator {
   public int add(String numbers) {
     SeparatorAndNumbers separatorAndNum = getSeparatorAndNumbersFrom(numbers);
-    return sum(separatorAndNum.numbers.split(separatorAndNum.separator));
+    return sum(separatorAndNum.extractNumberLine());
   }
 
   private SeparatorAndNumbers getSeparatorAndNumbersFrom(String numbers) {
@@ -34,12 +34,16 @@ class StringCalculator {
   }
 
   private static class SeparatorAndNumbers {
-    final String separator;
-    final String numbers;
+    private final String separator;
+    private final String numbers;
 
     public SeparatorAndNumbers(String separator, String numbers) {
       this.separator = separator;
       this.numbers = numbers;
+    }
+
+    public String[] extractNumberLine() {
+      return numbers.split(separator);
     }
   }
 }
