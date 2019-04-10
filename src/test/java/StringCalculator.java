@@ -5,8 +5,12 @@ class StringCalculator {
       separator = numbers.split("\n")[0].substring(2, 3);
       numbers = numbers.split("\n")[1];
     }
+    return sum(numbers.split(separator));
+  }
+
+  private int sum(String[] numbers) {
     int sum = 0;
-    for (String addend : numbers.split(separator)) {
+    for (String addend : numbers) {
       sum += nonNegativeValueOf(addend);
     }
     return sum;
