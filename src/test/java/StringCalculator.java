@@ -1,16 +1,16 @@
 class StringCalculator {
   public int add(String numbers) {
-    String separator;
-    String numbersLine;
+    SeparatorAndNumbers separatorAndNum = getSeparatorAndNumbersFrom(numbers);
+    return sum(separatorAndNum.numbers.split(separatorAndNum.separator));
+  }
+
+  private SeparatorAndNumbers getSeparatorAndNumbersFrom(String numbers) {
     if (numbers.startsWith("//")) {
       String[] separatorAndNumbers = numbers.split("\n");
-      separator = separatorAndNumbers[0].substring(2, 3);
-      numbersLine = separatorAndNumbers[1];
-    } else {
-      separator = "[,\n]";
-      numbersLine = numbers;
+      return new SeparatorAndNumbers(separatorAndNumbers[0].substring(2, 3), separatorAndNumbers[1]);
     }
-    return sum(numbersLine.split(separator));
+
+    return new SeparatorAndNumbers("[,\n]", numbers);
   }
 
   private int sum(String[] numbers) {
@@ -32,4 +32,31 @@ class StringCalculator {
     }
     return number;
   }
+
+  private static class SeparatorAndNumbers {
+    final String separator;
+    final String numbers;
+
+    public SeparatorAndNumbers(String separator, String numbers) {
+      this.separator = separator;
+      this.numbers = numbers;
+    }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
