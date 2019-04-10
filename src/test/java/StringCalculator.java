@@ -2,8 +2,9 @@ class StringCalculator {
   public int add(String numbers) {
     String separator = "[,\n]";
     if (numbers.startsWith("//")) {
-      separator = numbers.split("\n")[0].substring(2, 3);
-      numbers = numbers.split("\n")[1];
+      String[] separatorAndNumbers = numbers.split("\n");
+      separator = separatorAndNumbers[0].substring(2, 3);
+      numbers = separatorAndNumbers[1];
     }
     return sum(numbers.split(separator));
   }
