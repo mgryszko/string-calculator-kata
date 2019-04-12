@@ -9,10 +9,14 @@ class StringCalculator {
   private SeparatorAndNumbers getSeparatorAndNumbersFrom(String numbers) {
     if (numbers.startsWith("//")) {
       String[] separatorAndNumbers = numbers.split("\n");
-      return new SeparatorAndNumbers(Pattern.quote(separatorAndNumbers[0].substring(2, 3)), separatorAndNumbers[1]);
+      return new SeparatorAndNumbers(extractSeparator(separatorAndNumbers[0]), separatorAndNumbers[1]);
     }
 
     return new SeparatorAndNumbers("[,\n]", numbers);
+  }
+
+  private String extractSeparator(String separator) {
+    return Pattern.quote(separator.substring(2, 3));
   }
 
   private int sum(String[] numbers) {
