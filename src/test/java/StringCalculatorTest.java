@@ -47,5 +47,6 @@ public class StringCalculatorTest {
   public void customSeparatorManyNumbers() {
     assertThat(calculator.add("//,\n1,3,5,7"), is(16));
     assertThat(calculator.add("//_\n1_3_5_7"), is(16));
+    assertThat(calculator.add("//|\n1|3|5|7"), is(16));
   }
 }

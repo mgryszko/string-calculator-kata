@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 class StringCalculator {
   public int add(String numbers) {
     SeparatorAndNumbers separatorAndNum = getSeparatorAndNumbersFrom(numbers);
@@ -7,7 +9,7 @@ class StringCalculator {
   private SeparatorAndNumbers getSeparatorAndNumbersFrom(String numbers) {
     if (numbers.startsWith("//")) {
       String[] separatorAndNumbers = numbers.split("\n");
-      return new SeparatorAndNumbers(separatorAndNumbers[0].substring(2, 3), separatorAndNumbers[1]);
+      return new SeparatorAndNumbers(Pattern.quote(separatorAndNumbers[0].substring(2, 3)), separatorAndNumbers[1]);
     }
 
     return new SeparatorAndNumbers("[,\n]", numbers);
